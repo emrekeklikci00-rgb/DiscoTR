@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türk Discord - Giriş</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- Sol taraf - Görsel -->
+            <div class="auth-visual">
+                <div class="floating-icons">
+                    <div class="icon" style="--delay:0s">💬</div>
+                    <div class="icon" style="--delay:0.5s">🎮</div>
+                    <div class="icon" style="--delay:1s">🎵</div>
+                    <div class="icon" style="--delay:1.5s">👥</div>
+                </div>
+                <h1 data-i18n="appName">Türk Discord</h1>
+                <p data-i18n="appSlogan">Arkadaşlarınla bağlantıda kal</p>
+            </div>
+
+            <!-- Sağ taraf - Form -->
+            <div class="auth-box" id="loginBox">
+                <div class="auth-header">
+                    <h2 data-i18n="welcomeBack">Tekrar Hoşgeldin!</h2>
+                    <p data-i18n="loginSubtitle">Seni tekrar görmeyi çok özledik!</p>
+                </div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label data-i18n="email">E-posta</label>
+                        <input type="email" id="loginEmail" required placeholder="ornek@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="password">Şifre</label>
+                        <input type="password" id="loginPassword" required placeholder="••••••••">
+                        <a href="#" class="forgot-link" data-i18n="forgotPassword">Şifreni mi unuttun?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" data-i18n="login">Giriş Yap</button>
+                    
+                    <div class="auth-divider">
+                        <span data-i18n="or">veya</span>
+                    </div>
+                    
+                    <button type="button" class="btn btn-secondary" onclick="showRegister()" data-i18n="createAccount">Hesap Oluştur</button>
+                </form>
+            </div>
+
+            <div class="auth-box hidden" id="registerBox">
+                <div class="auth-header">
+                    <h2 data-i18n="createAccountTitle">Hesap Oluştur</h2>
+                    <p data-i18n="registerSubtitle">Yeni bir maceraya başla!</p>
+                </div>
+
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label data-i18n="email">E-posta</label>
+                        <input type="email" id="registerEmail" required placeholder="ornek@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="username">Kullanıcı Adı</label>
+                        <input type="text" id="registerUsername" required placeholder="kullaniciadi" minlength="3" maxlength="32">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="password">Şifre</label>
+                        <input type="password" id="registerPassword" required placeholder="••••••••" minlength="6">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="confirmPassword">Şifre Tekrar</label>
+                        <input type="password" id="registerPassword2" required placeholder="••••••••">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" data-i18n="continue">Devam Et</button>
+                    
+                    <div class="auth-divider">
+                        <span data-i18n="or">veya</span>
+                    </div>
+                    
+                    <button type="button" class="btn btn-secondary" onclick="showLogin()" data-i18n="haveAccount">Zaten hesabın var mı?</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dil Seçici -->
+        <div class="lang-selector">
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
